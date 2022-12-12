@@ -1,0 +1,114 @@
+// Color set
+$color-blue: #3b82f6;
+$color-red: #ef4444;
+$color-green: #22c55e;
+$color-orange: #f97316;
+$color-gray: #6b7280;
+$color-white: #ffffff;
+$color-black: #000000;
+
+// Color interval
+$color-interval: 7.6%;
+
+// Colors
+$colors: (
+  'blue': $color-blue,
+  'red': $color-red,
+  'green': $color-green,
+  'orange': $color-orange,
+  'gray': $color-gray,
+  'black': $color-black,
+  'white': $color-white
+);
+
+// Color stages
+$stages: (
+  '100': -4,
+  '200': -3,
+  '300': -2,
+  '400': -1,
+  '500': 0,
+  '600': 1,
+  '700': 2,
+  '800': 3,
+  '900': 4
+);
+
+// Opacities
+$opacities: (
+  '10': 0.1,
+  '20': 0.2,
+  '30': 0.3,
+  '40': 0.4,
+  '50': 0.5,
+  '60': 0.6,
+  '70': 0.7,
+  '80': 0.8,
+  '90': 0.9,
+  '100': 1
+);
+
+// Breakpoints
+$breakpoints: (
+  'default': '',
+  'sm': 640,
+  'md': 768,
+  'lg': 1024,
+  'xl': 1280,
+  '2xl': 1536
+);
+
+// Z-index
+$zIndex: (
+  '-1': -1,
+  '0': 0,
+  '20': 1020,
+  '30': 1030,
+  '40': 1040,
+  '50': 1050,
+  '60': 1060,
+  '70': 1070,
+  '80': 1080,
+  '90': 1090
+);
+
+// Steps
+$rm-step-interval: 0.25;
+$rm-steps: (0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 14, 16, 20, 24, 28, 32, 36, 40, 44, 48, 52, 56, 60, 64, 72, 80, 96);
+$sides: (
+  't': 'top',
+  'r': 'right',
+  'b': 'bottom',
+  'l': 'left'
+);
+$axios: (
+  'x': (
+    'left',
+    'right'
+  ),
+  'y': (
+    'top',
+    'bottom'
+  )
+);
+
+// Shadows
+$shadows: (
+  'default': drop-shadow(0 1px 2px rgb(0 0 0 / 0.1)) drop-shadow(0 1px 1px rgb(0 0 0 / 0.06)),
+  'sm': drop-shadow(0 1px 1px rgb(0 0 0 / 0.05)),
+  'md': drop-shadow(0 4px 3px rgb(0 0 0 / 0.07)) drop-shadow(0 2px 2px rgb(0 0 0 / 0.06)),
+  'lg': drop-shadow(0 10px 8px rgb(0 0 0 / 0.04)) drop-shadow(0 4px 3px rgb(0 0 0 / 0.1)),
+  'xl': drop-shadow(0 20px 13px rgb(0 0 0 / 0.03)) drop-shadow(0 8px 5px rgb(0 0 0 / 0.08)),
+  '2xl': drop-shadow(0 25px 25px rgb(0 0 0 / 0.15)),
+  'none': drop-shadow(0 0 #0000)
+);
+
+// Transitions
+$transitions: (
+  'default': (
+    'transition-property':
+      'color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter',
+    'transition-timing-function': 'cubic-bezier(0.4, 0, 0.2, 1)',
+    'transition-duration': '150ms'
+  )
+);

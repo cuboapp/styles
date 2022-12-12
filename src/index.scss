@@ -1,0 +1,33 @@
+@use 'sass:math';
+
+// @tailwind base;
+// @tailwind components;
+// @tailwind utilities;
+// @tailwind variants;
+
+// Variables
+// @import './variables';
+
+// Utils
+@import './utils/animate.scss';
+@import './utils/colors.scss';
+@import './utils/container.scss';
+@import './utils/cursor.scss';
+@import './utils/display.scss';
+@import './utils/flex.scss';
+@import './utils/font.scss';
+@import './utils/headers.scss';
+@import './utils/margin.scss';
+@import './utils/padding.scss';
+@import './utils/position.scss';
+@import './utils/rounded.scss';
+@import './utils/shadow.scss';
+@import './utils/text.scss';
+@import './utils/transitions.scss';
+@import './utils/variables.scss';
+@import './utils/width.scss';
+@import './utils/z-index.scss';
+
+// Components
+// @import './button';
+// @import './checkbox';

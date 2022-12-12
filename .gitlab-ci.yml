@@ -1,0 +1,30 @@
+# .gitlab-ci.yml
+image: "node:16-slim"
+
+stages:
+  - publish
+
+publish:
+  stage: publish
+  variables:
+      GIT_STRATEGY: clone
+  before_script:
+    - apt-get update && apt-get install git -y
+  script:
+
+    - npm set cache .npm
+
+    # Конфигурация npm
+    - echo "//registry.npmjs.org/:_authToken=${NPM_TOKEN}" > .npmrc
+
+    # Установка зависимостей и сборка проекта
+    - npm install
+    - npm run build
+
+    # Публикация в npm
+    - npm publish --access public
+  cache:
+    paths:
+      - .npm
+  only:
+    - master

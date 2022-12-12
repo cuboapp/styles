@@ -1,0 +1,15 @@
+.#{$prefix}-static {
+  position: static;
+}
+.#{$prefix}-fixed {
+  position: fixed;
+}
+.#{$prefix}-absolute {
+  position: absolute;
+}
+.#{$prefix}-relative {
+  position: relative;
+}
+.#{$prefix}-sticky {
+  position: sticky;
+}

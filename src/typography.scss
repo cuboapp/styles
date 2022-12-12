@@ -1,0 +1,40 @@
+.#{$prefix}-markdown {
+  h1 {
+    font-weight: 800;
+    font-size: 1.875rem;
+    line-height: 2.25rem;
+  }
+
+  h2 {
+    font-weight: 700;
+    font-size: 1.5rem;
+    line-height: 2rem;
+  }
+
+  h3 {
+    font-weight: 600;
+    font-size: 1.25rem;
+    line-height: 1.75rem;
+  }
+
+  h4 {
+    font-weight: 500;
+    font-size: 1rem;
+    line-height: 1.5rem;
+  }
+
+  a:not([data-nohover]) {
+    color: rgba(var(--#{$prefix}-color-blue-800), 1);
+    text-decoration: none;
+    background-image: linear-gradient(rgba(var(--#{$prefix}-color-blue-800), 1), rgba(var(--#{$prefix}-color-blue-800), 1));
+    background-size: 0% 2px;
+    background-position-y: calc(100% + 1px);
+    background-position-x: 0%;
+    background-repeat: no-repeat;
+    transition: background-size 0.1s ease-in-out;
+
+    &:hover {
+      background-size: 100% 2px;
+    }
+  }
+}

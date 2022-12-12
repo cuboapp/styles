@@ -1,0 +1,83 @@
+@import '../config.scss';
+
+@each $ckey, $cvalue in $colors {
+  [class*='#{$prefix}-text-#{$ckey}'] {
+    color: rgba(var(--#{$prefix}-text-color), var(--#{$prefix}-text-opacity, 1));
+  }
+
+  [class*='#{$prefix}-bg-#{$ckey}'] {
+    background-color: rgba(var(--#{$prefix}-bg-color), var(--#{$prefix}-bg-opacity, 1));
+  }
+
+  [class*='#{$prefix}-fill-#{$ckey}'] {
+    fill: rgba(var(--#{$prefix}-fill-color), var(--#{$prefix}-fill-opacity, 1));
+  }
+
+  // text: .c-text-white
+  .#{$prefix}-text-#{$ckey},
+  [class*='#{$prefix}-text-#{$ckey}/'] {
+    --#{$prefix}-text-color: var(--#{$prefix}-color-#{$ckey});
+  }
+  // background: .c-bg-white
+  .#{$prefix}-bg-#{$ckey},
+  [class*='#{$prefix}-bg-#{$ckey}/'] {
+    --#{$prefix}-bg-color: var(--#{$prefix}-color-#{$ckey});
+  }
+  // fill: .c-fill-white
+  .#{$prefix}-fill-#{$ckey},
+  [class*='#{$prefix}-fill-#{$ckey}/'] {
+    --#{$prefix}-fill-color: var(--#{$prefix}-color-#{$ckey});
+  }
+
+  @each $okey, $ovalue in $opacities {
+    // text: .c-text-blue/50
+    .#{$prefix}-text-#{$ckey}\/#{$okey} {
+      --#{$prefix}-text-opacity: var(--#{$prefix}-opacity-#{$okey});
+    }
+    // background: .c-bg-blue/50
+    .#{$prefix}-bg-#{$ckey}\/#{$okey} {
+      --#{$prefix}-bg-opacity: var(--#{$prefix}-opacity-#{$okey});
+    }
+    // fill: .c-fill-blue/50
+    .#{$prefix}-fill-#{$ckey}\/#{$okey} {
+      --#{$prefix}-fill-opacity: var(--#{$prefix}-opacity-#{$okey});
+    }
+  }
+
+  @if $ckey != 'black' or $ckey != 'white' {
+    @each $skey, $svalue in $stages {
+      // text: .c-text-blue-900, .c-text-blue-900/N
+      .#{$prefix}-text-#{$ckey}-#{$skey},
+      [class*='#{$prefix}-text-#{$ckey}-#{$skey}/'] {
+        --#{$prefix}-text-color: var(--#{$prefix}-color-#{$ckey}-#{$skey});
+      }
+
+      // background: .c-bg-blue-900, .c-bg-blue-900/N
+      .#{$prefix}-bg-#{$ckey}-#{$skey},
+      [class*='#{$prefix}-bg-#{$ckey}-#{$skey}/'] {
+        --#{$prefix}-bg-color: var(--#{$prefix}-color-#{$ckey}-#{$skey});
+      }
+
+      // fill: .c-fill-blue-900, .c-fill-blue-900/N
+      .#{$prefix}-fill-#{$ckey}-#{$skey},
+      [class*='#{$prefix}-fill-#{$ckey}-#{$skey}/'] {
+        --#{$prefix}-fill-color: var(--#{$prefix}-color-#{$ckey}-#{$skey});
+      }
+
+      @each $okey, $ovalue in $opacities {
+        // text
+        .#{$prefix}-text-#{$ckey}-#{$skey}\/#{$okey} {
+          --#{$prefix}-text-opacity: var(--#{$prefix}-opacity-#{$okey});
+        }
+        // background
+        .#{$prefix}-bg-#{$ckey}-#{$skey}\/#{$okey} {
+          --#{$prefix}-bg-opacity: var(--#{$prefix}-opacity-#{$okey});
+        }
+        // fill
+        .#{$prefix}-fill-#{$ckey}-#{$skey}\/#{$okey} {
+          --#{$prefix}-fill-opacity: var(--#{$prefix}-opacity-#{$okey});
+        }
+      }
+    }
+  }
+}

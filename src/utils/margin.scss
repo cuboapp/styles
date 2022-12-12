@@ -1,0 +1,65 @@
+@import '../config.scss';
+
+$p: 'm';
+
+.#{$prefix}-#{$p}-auto {
+  margin: auto;
+}
+.#{$prefix}-#{$p}-px {
+  margin: 1px;
+}
+
+@each $step in $rm-steps {
+  .#{$prefix}-#{$p}-#{$step} {
+    @if $step == 0 {
+      margin: 0px;
+    } @else {
+      margin: #{$step * $rm-step-interval}rem;
+    }
+  }
+
+  @each $skey, $svalue in $sides {
+    .#{$prefix}-#{$p}#{$skey}-#{$step} {
+      @if $step == 0 {
+        margin-#{$svalue}: 0px;
+      } @else {
+        margin-#{$svalue}: #{$step * $rm-step-interval}rem;
+      }
+    }
+  }
+
+  @each $key, $asides in $axios {
+    .#{$prefix}-#{$p}#{$key}-#{$step} {
+      @each $aside in $asides {
+        @if $step == 0 {
+          margin-#{$aside}: 0px;
+        } @else {
+          margin-#{$aside}: #{$step * $rm-step-interval}rem;
+        }
+      }
+    }
+  }
+}
+
+@each $skey, $svalue in $sides {
+  .#{$prefix}-#{$p}#{$skey}-auto {
+    margin-#{$svalue}: auto;
+  }
+  .#{$prefix}-#{$p}#{$skey}-px {
+    margin-#{$svalue}: 1px;
+  }
+}
+
+@each $key, $asides in $axios {
+  .#{$prefix}-#{$p}#{$key}-auto {
+    @each $aside in $asides {
+      margin-#{$aside}: auto;
+    }
+  }
+
+  .#{$prefix}-#{$p}#{$key}-px {
+    @each $aside in $asides {
+      margin-#{$aside}: 1px;
+    }
+  }
+}

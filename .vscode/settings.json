@@ -1,0 +1,14 @@
+{
+  "editor.minimap.enabled": false,
+  "editor.formatOnSave": true,
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": true,
+    "source.fixAll.stylelint": true
+  },
+  "html.format.wrapAttributes": "force",
+  "html.format.wrapLineLength": 40,
+  "files.exclude": {
+    "node_modules/": true
+    // "dist/*": true
+  }
+}

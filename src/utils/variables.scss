@@ -1,0 +1,45 @@
+@import '../config.scss';
+
+@function HexToRGB($hex) {
+  @return red($hex), green($hex), blue($hex);
+}
+
+:root {
+  --#{$prefix}-font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace;
+
+  // opacity
+  @each $key, $value in $opacities {
+    --#{$prefix}-opacity-#{$key}: #{$value};
+  }
+
+  // z-index
+  @each $key, $value in $zIndex {
+    --#{$prefix}-z-index-#{$key}: #{$value};
+  }
+
+  // shadow
+  @each $key, $value in $shadows {
+    @if ($key == 'default') {
+      --#{$prefix}-shadow: #{$value};
+    } @else {
+      --#{$prefix}-shadow-#{$key}: #{$value};
+    }
+  }
+
+  // colors
+  @each $ckey, $cvalue in $colors {
+    --#{$prefix}-color-#{$ckey}: #{HexToRGB($cvalue)};
+
+    @if $ckey != 'black' and $ckey != 'white' {
+      @each $skey, $svalue in $stages {
+        @if $svalue == 0 {
+          --#{$prefix}-color-#{$ckey}-#{$skey}: #{HexToRGB($cvalue)};
+        } @else if $svalue > 0 {
+          --#{$prefix}-color-#{$ckey}-#{$skey}: #{HexToRGB(darken($cvalue, $color-interval * abs($svalue)))};
+        } @else {
+          --#{$prefix}-color-#{$ckey}-#{$skey}: #{HexToRGB(lighten($cvalue, $color-interval * abs($svalue)))};
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,11 @@
+node_modules/
+dist/
+lib/
+*.log
+*.sublime-project
+*.sublime-workspace
+.composer.phar
+*.sublime-gulp.cache
+.DS_Store
+package-lock.json
+examples/

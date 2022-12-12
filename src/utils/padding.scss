@@ -1,0 +1,65 @@
+@import '../config.scss';
+
+$p: 'p';
+
+.#{$prefix}-#{$p}-auto {
+  padding: auto;
+}
+.#{$prefix}-#{$p}-px {
+  padding: 1px;
+}
+
+@each $step in $rm-steps {
+  .#{$prefix}-#{$p}-#{$step} {
+    @if $step == 0 {
+      padding: 0px;
+    } @else {
+      padding: #{$step * $rm-step-interval}rem;
+    }
+  }
+
+  @each $skey, $svalue in $sides {
+    .#{$prefix}-#{$p}#{$skey}-#{$step} {
+      @if $step == 0 {
+        padding-#{$svalue}: 0px;
+      } @else {
+        padding-#{$svalue}: #{$step * $rm-step-interval}rem;
+      }
+    }
+  }
+
+  @each $key, $asides in $axios {
+    .#{$prefix}-#{$p}#{$key}-#{$step} {
+      @each $aside in $asides {
+        @if $step == 0 {
+          padding-#{$aside}: 0px;
+        } @else {
+          padding-#{$aside}: #{$step * $rm-step-interval}rem;
+        }
+      }
+    }
+  }
+}
+
+@each $skey, $svalue in $sides {
+  .#{$prefix}-#{$p}#{$skey}-auto {
+    padding-#{$svalue}: auto;
+  }
+  .#{$prefix}-#{$p}#{$skey}-px {
+    padding-#{$svalue}: 1px;
+  }
+}
+
+@each $key, $asides in $axios {
+  .#{$prefix}-#{$p}#{$key}-auto {
+    @each $aside in $asides {
+      padding-#{$aside}: auto;
+    }
+  }
+
+  .#{$prefix}-#{$p}#{$key}-px {
+    @each $aside in $asides {
+      padding-#{$aside}: 1px;
+    }
+  }
+}

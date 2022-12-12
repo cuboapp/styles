@@ -1,0 +1,7 @@
+@import '../config.scss';
+
+@each $key, $value in $zIndex {
+  .#{$prefix}-z-#{$key} {
+    z-index: #{$value};
+  }
+}
