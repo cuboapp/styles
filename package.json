@@ -2,6 +2,9 @@
   "name": "@cuboapp/styles",
   "version": "0.0.1",
   "private": false,
+  "publishConfig": {
+    "access": "public"
+  },
   "author": "",
   "license": "MIT",
   "description": "CuboApp styles",
@@ -13,9 +16,10 @@
     "postinstall": "npm run build"
   },
   "exports": {
-    ".": "./dist/css/styles.css",
     "./typography": "./dist/css/typography.css",
-    "./sass": "./dist/sass/index.scss"
+    "./sass": "./dist/sass/index.scss",
+    "./config": "./dist/sass/config.scss",
+    ".": "./dist/css/styles.css"
   },
   "devDependencies": {
     "@types/gulp": "4.0.9",

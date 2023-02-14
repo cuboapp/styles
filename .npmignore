@@ -7,3 +7,4 @@ npm-debug.log
 .scss-lint.yml
 commitlint.config.js
 examples
+src/styles.css

@@ -9,3 +9,4 @@ lib/
 .DS_Store
 package-lock.json
 examples/
+src/styles.css

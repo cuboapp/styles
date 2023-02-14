@@ -26,15 +26,22 @@
   a:not([data-nohover]) {
     color: rgba(var(--#{$prefix}-color-blue-800), 1);
     text-decoration: none;
+    // background-image: linear-gradient(rgba(var(--#{$prefix}-color-blue-800), 1), rgba(var(--#{$prefix}-color-blue-800), 1));
+    // background-size: 0% 2px;
+    // background-position-y: calc(100% + 1px);
+    // background-position-x: 0%;
+    // background-repeat: no-repeat;
+    // transition: background-size 0.1s ease-in-out;
+
     background-image: linear-gradient(rgba(var(--#{$prefix}-color-blue-800), 1), rgba(var(--#{$prefix}-color-blue-800), 1));
-    background-size: 0% 2px;
-    background-position-y: calc(100% + 1px);
-    background-position-x: 0%;
+    background-position: 0% 100%;
     background-repeat: no-repeat;
-    transition: background-size 0.1s ease-in-out;
+    transition: background-size 0.3s ease 0s;
+    background-size: 0 1px;
+    line-height: 1.3;
 
     &:hover {
-      background-size: 100% 2px;
+      background-size: 100% 1px;
     }
   }
 }

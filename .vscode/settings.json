@@ -10,5 +10,23 @@
   "files.exclude": {
     "node_modules/": true
     // "dist/*": true
+  },
+  "deploy": {
+    "openOutputOnDeploy": false,
+    "openOutputOnStartup": false,
+    "clearOutputOnStartup": true,
+    "targets": [
+      {
+        "type": "sftp",
+        "name": "Production",
+
+        "dir": "/srv/web/cuboapp.co/static/styles/1.0.0",
+        "host": "77.223.119.68",
+        "port": 22,
+        "user": "root",
+        "privateKey": "/Users/yaroslav/.ssh/id_rsa",
+        "promptForPassword": true
+      }
+    ]
   }
 }
