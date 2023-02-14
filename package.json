@@ -12,8 +12,7 @@
   "type": "module",
   "scripts": {
     "dev": "PREFIX=c gulp watch",
-    "build": "node ./scripts/generate/generate",
-    "postinstall": "npm run build"
+    "build": "node ./scripts/generate/generate"
   },
   "exports": {
     "./typography": "./dist/css/typography.css",

@@ -11,10 +11,7 @@ import rename from 'gulp-rename'
 import sourcemaps from 'gulp-sourcemaps'
 import gulpAutoprefixer from 'gulp-autoprefixer'
 import insert from 'gulp-insert'
-import postcss from 'gulp-postcss'
 import concat from 'gulp-concat-css'
-import autoprefixer from 'autoprefixer'
-import tailwindcss from 'tailwindcss'
 
 export function createLogger(prefix = 'Styles') {
   const txt = text => (prefix ? prefix + ': ' : '') + text
