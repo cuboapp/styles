@@ -122,6 +122,19 @@ export class StylesBuilder {
         .on('error', reject)
     })
 
+    const p3 = new Promise((resolve, reject) => {
+      gulp
+        .src(`${this.sassDir}/utils/variables.scss`)
+        .pipe(sourcemaps.write('.'))
+        .pipe(this.converter().on('error', console.error))
+        .pipe(gulpAutoprefixer())
+        .pipe(concat('variables.css'))
+        // .pipe(postcss([tailwindcss(`${this.baseDir}/tailwind.config.cjs`), autoprefixer()]))
+        .pipe(gulp.dest(this.cssDir))
+        .on('end', resolve)
+        .on('error', reject)
+    })
+
     return Promise.all([p1, p2])
   }
 

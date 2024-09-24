@@ -10,3 +10,4 @@ lib/
 package-lock.json
 examples/
 src/styles.css
+.vscode/settings.json

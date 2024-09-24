@@ -1,11 +1,11 @@
 @each $key, $value in $shadows {
   @if ($key == 'default') {
     .#{$prefix}-shadow {
-      filter: #{$value};
+      box-shadow: #{$value};
     }
   } @else {
     .#{$prefix}-shadow-#{$key} {
-      filter: #{$value};
+      box-shadow: #{$value};
     }
   }
 }

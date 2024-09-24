@@ -6,6 +6,48 @@
 
 :root {
   --#{$prefix}-font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace;
+  --#{$prefix}-font-regular: 'Inter var', ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue,
+    Arial, Noto Sans, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji;
+
+  .__light {
+    --#{$prefix}-theme-background-primary: #{HexToRGB(#fff)};
+    --#{$prefix}-theme-background-secondary: #{HexToRGB(#fafafa)};
+    --#{$prefix}-theme-background-disabled: #{HexToRGB(#ddd)};
+    --#{$prefix}-theme-background-readonly: #{HexToRGB(#eee)};
+    --#{$prefix}-theme-background-hover: #{HexToRGB(#f5f5f5)};
+    --#{$prefix}-theme-background-inverse: #{HexToRGB(#222)};
+
+    --#{$prefix}-theme-border-primary: var(--c-color-gray-100);
+    --#{$prefix}-theme-border-secondary: var(--c-color-gray-200);
+    --#{$prefix}-theme-border-disabled: var(--c-color-gray-100);
+
+    --#{$prefix}-theme-text-primary: #{HexToRGB(#000)};
+    --#{$prefix}-theme-text-secondary: #{HexToRGB(#333)};
+    --#{$prefix}-theme-text-light: #{HexToRGB(#999)};
+    --#{$prefix}-theme-text-disabled: #{HexToRGB(#999)};
+
+    --#{$prefix}-box-shadow-color: #{HexToRGB(#000)};
+  }
+
+  .__dark {
+    --#{$prefix}-theme-background-primary: #{HexToRGB(#222)};
+    --#{$prefix}-theme-background-secondary: #{HexToRGB(#333)};
+    --#{$prefix}-theme-background-disabled: #{HexToRGB(#444)};
+    --#{$prefix}-theme-background-readonly: #{HexToRGB(#333)};
+    --#{$prefix}-theme-background-hover: #{HexToRGB(#393939)};
+    --#{$prefix}-theme-background-inverse: #{HexToRGB(#fff)};
+
+    --#{$prefix}-theme-border-primary: var(--c-color-gray-800);
+    --#{$prefix}-theme-border-secondary: var(--c-color-gray-700);
+    --#{$prefix}-theme-border-disabled: #{HexToRGB(#444)};
+
+    --#{$prefix}-theme-text-primary: #{HexToRGB(#fff)};
+    --#{$prefix}-theme-text-secondary: #{HexToRGB(#ddd)};
+    --#{$prefix}-theme-text-light: #{HexToRGB(#666)};
+    --#{$prefix}-theme-text-disabled: #{HexToRGB(#999)};
+
+    --#{$prefix}-box-shadow-color: #{HexToRGB(#fff)};
+  }
 
   // opacity
   @each $key, $value in $opacities {
